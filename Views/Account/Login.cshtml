@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "ورود به سیستم";
+}
+
+<h2>ورود به سیستم</h2>
+
+<form asp-action="Login" method="post">
+    <div class="form-group">
+        <label for="username">نام کاربری:</label>
+        <input type="text" id="username" name="username" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="password">رمز عبور:</label>
+        <input type="password" id="password" name="password" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">ورود</button>
+</form>
+
+@if (ViewData["ReturnUrl"] != null)
+{
+    <input type="hidden" name="returnUrl" value="@ViewData["ReturnUrl"]" />
+}

@@ -1,0 +1,88 @@
+﻿@model CourseClass
+
+@{
+    ViewData["Title"] = "مدیریت دانشجویان کلاس";
+}
+
+<h2>مدیریت دانشجویان کلاس</h2>
+<h4>@Model.Course.Title (@Model.Course.Code)</h4>
+<p>
+    زمان: @Model.Day.ToString() @Model.StartTime.ToString(@"hh\:mm") - @Model.EndTime.ToString(@"hh\:mm")<br />
+    مکان: @Model.Building - @Model.RoomNumber<br />
+    ظرفیت: @Model.Students.Count / @Model.Capacity
+</p>
+
+<hr />
+
+<h5>دانشجویان ثبت‌نام شده</h5>
+@if (Model.Students.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>شماره دانشجویی</th>
+                <th>نام</th>
+                <th>نام خانوادگی</th>
+                <th>عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Students)
+            {
+                <tr>
+                    <td>@item.Student.StudentId</td>
+                    <td>@item.Student.FirstName</td>
+                    <td>@item.Student.LastName</td>
+                    <td>
+                        <form asp-action="RemoveStudentFromClass" method="post" onsubmit="return confirm('آیا از حذف این دانشجو از کلاس مطمئن هستید؟');">
+                            <input type="hidden" name="classId" value="@Model.Id" />
+                            <input type="hidden" name="studentId" value="@item.StudentId" />
+                            <button type="submit" class="btn btn-danger btn-sm">حذف از کلاس</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">هیچ دانشجویی در این کلاس ثبت‌نام نکرده است</div>
+}
+
+<hr />
+
+<h5>اضافه کردن دانشجو جدید</h5>
+@if (ViewBag.AvailableStudents != null && ((IEnumerable<Student>)ViewBag.AvailableStudents).Any())
+{
+    <form asp-action="AddStudentToClass" method="post">
+        <input type="hidden" name="classId" value="@Model.Id" />
+
+        <div class="form-group mb-3">
+            <label class="control-label">دانشجو</label>
+            <select name="studentId" class="form-control">
+                @foreach (var student in ViewBag.AvailableStudents)
+                {
+                    <option value="@student.Id">@student.StudentId - @student.FirstName @student.LastName</option>
+                }
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="اضافه کردن به کلاس" class="btn btn-primary" />
+            <a asp-action="CourseClasses" class="btn btn-secondary">بازگشت</a>
+        </div>
+    </form>
+}
+else
+{
+    <div class="alert alert-warning">هیچ دانشجوی آزادی برای ثبت‌نام در این کلاس وجود ندارد</div>
+    <a asp-action="CourseClasses" class="btn btn-secondary">بازگشت</a>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger mt-3">
+        @TempData["ErrorMessage"]
+    </div>
+}

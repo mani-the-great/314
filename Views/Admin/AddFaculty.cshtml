@@ -1,0 +1,45 @@
+﻿@model Faculty
+
+@{
+    ViewData["Title"] = "اضافه کردن دانشکده جدید";
+}
+
+<h2>اضافه کردن دانشکده جدید</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="AddFaculty">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Name" class="control-label">نام دانشکده</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="MainBuilding" class="control-label">ساختمان مرکزی</label>
+                <input asp-for="MainBuilding" class="form-control" />
+                <span asp-validation-for="MainBuilding" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Budget" class="control-label">بودجه</label>
+                <input asp-for="Budget" class="form-control" type="number" />
+                <span asp-validation-for="Budget" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="ذخیره" class="btn btn-primary" />
+                <a asp-action="Faculties" class="btn btn-secondary">بازگشت</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

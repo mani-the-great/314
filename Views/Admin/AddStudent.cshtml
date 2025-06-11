@@ -1,0 +1,71 @@
+﻿@model Student
+
+@{
+    ViewData["Title"] = "اضافه کردن دانشجو جدید";
+}
+
+<h2>اضافه کردن دانشجو جدید</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="AddStudent">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="StudentId" class="control-label">شماره دانشجویی</label>
+                <input asp-for="StudentId" class="form-control" />
+                <span asp-validation-for="StudentId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="FirstName" class="control-label">نام</label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="LastName" class="control-label">نام خانوادگی</label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="control-label">ایمیل</label>
+                <input asp-for="Email" class="form-control" type="email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="PasswordHash" class="control-label">رمز عبور</label>
+                <input asp-for="PasswordHash" class="form-control" type="password" />
+                <span asp-validation-for="PasswordHash" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="FacultyId" class="control-label">دانشکده</label>
+                <select asp-for="FacultyId" class="form-control" asp-items="ViewBag.Faculties">
+                    <option value="">-- انتخاب دانشکده --</option>
+                </select>
+                <span asp-validation-for="FacultyId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="EntryDate" class="control-label">تاریخ ورود</label>
+                <input asp-for="EntryDate" class="form-control" type="date" />
+                <span asp-validation-for="EntryDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="ذخیره" class="btn btn-primary" />
+                <a asp-action="Students" class="btn btn-secondary">بازگشت</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

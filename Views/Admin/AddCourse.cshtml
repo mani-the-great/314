@@ -1,0 +1,75 @@
+﻿@model Course
+
+@{
+    ViewData["Title"] = "اضافه کردن درس جدید";
+}
+
+<h2>اضافه کردن درس جدید</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="AddCourse">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Code" class="control-label">کد درس</label>
+                <input asp-for="Code" class="form-control" />
+                <span asp-validation-for="Code" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Title" class="control-label">عنوان درس</label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Credits" class="control-label">تعداد واحد</label>
+                <input asp-for="Credits" class="form-control" type="number" min="1" max="4" />
+                <span asp-validation-for="Credits" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Description" class="control-label">توضیحات</label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="ExamTime" class="control-label">زمان امتحان پایان‌ترم</label>
+                <input asp-for="ExamTime" class="form-control" type="datetime-local" />
+                <span asp-validation-for="ExamTime" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="FacultyId" class="control-label">دانشکده</label>
+                <select asp-for="FacultyId" class="form-control" asp-items="ViewBag.Faculties">
+                    <option value="">-- انتخاب دانشکده --</option>
+                </select>
+                <span asp-validation-for="FacultyId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="control-label">پیش‌نیازها</label>
+                <select name="prerequisiteIds" class="form-control" multiple>
+                    @foreach (var course in ViewBag.Prerequisites)
+                    {
+                        <option value="@course.Id">@course.Title (@course.Code)</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="ذخیره" class="btn btn-primary" />
+                <a asp-action="Courses" class="btn btn-secondary">بازگشت</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

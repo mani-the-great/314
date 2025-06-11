@@ -1,0 +1,83 @@
+﻿@model CourseClass
+
+@{
+    ViewData["Title"] = "اضافه کردن کلاس جدید";
+}
+
+<h2>اضافه کردن کلاس جدید</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="AddClass">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="CourseId" class="control-label">درس</label>
+                <select asp-for="CourseId" asp-items="ViewBag.Courses "class="form-control">
+                    <option value="">-- انتخاب درس --</option>
+                </select>
+                <span asp-validation-for="CourseId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Building" class="control-label">ساختمان</label>
+                <input asp-for="Building" class="form-control" />
+                <span asp-validation-for="Building" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="RoomNumber" class="control-label">شماره اتاق</label>
+                <input asp-for="RoomNumber" class="form-control" />
+                <span asp-validation-for="RoomNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Capacity" class="control-label">ظرفیت</label>
+                <input asp-for="Capacity" class="form-control" type="number" min="1" />
+                <span asp-validation-for="Capacity" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Day" class="control-label">روز هفته</label>
+                <select asp-for="Day" class="form-control" asp-items="Html.GetEnumSelectList<DayOfWeek>()">
+                    <option value="">-- انتخاب روز --</option>
+                </select>
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="StartTime" class="control-label">ساعت شروع</label>
+                <input asp-for="StartTime" class="form-control" type="time" />
+                <span asp-validation-for="StartTime" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="EndTime" class="control-label">ساعت پایان</label>
+                <input asp-for="EndTime" class="form-control" type="time" />
+                <span asp-validation-for="EndTime" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="control-label">اساتید</label>
+                <select name="professorIds" class="form-control" multiple>
+                    @foreach (var professor in ViewBag.Professors)
+                    {
+                        <option value="@professor.Id">@professor.FirstName @professor.LastName</option>
+                    }
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="ذخیره" class="btn btn-primary" />
+                <a asp-action="CourseClasses" class="btn btn-secondary">بازگشت</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

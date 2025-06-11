@@ -19,6 +19,7 @@ namespace GolestanSystem.Data
         public DbSet<CourseStudent> CourseStudents { get; set; }
         public DbSet<CourseProfessor> CourseProfessors { get; set; }
         public DbSet<Faculty> Faculties { get; set; }
+        public DbSet<Prerequisite> Prerequisites { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

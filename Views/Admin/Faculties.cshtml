@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Faculty>
+
+@{
+    ViewData["Title"] = "مدیریت دانشکده‌ها";
+}
+
+<h2>مدیریت دانشکده‌ها</h2>
+
+<p>
+    <a asp-action="AddFaculty" class="btn btn-primary">اضافه کردن دانشکده جدید</a>
+</p>
+
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>نام دانشکده</th>
+            <th>ساختمان مرکزی</th>
+            <th>بودجه</th>
+            <th>عملیات</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.MainBuilding</td>
+                <td>@item.Budget.ToString("N0")</td>
+                <td>
+                    <form asp-action="DeleteFaculty" method="post" onsubmit="return confirm('آیا از حذف این دانشکده مطمئن هستید؟');">
+                        <input type="hidden" name="id" value="@item.Id" />
+                        <button type="submit" class="btn btn-danger btn-sm">حذف</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger mt-3">
+        @TempData["ErrorMessage"]
+    </div>
+}

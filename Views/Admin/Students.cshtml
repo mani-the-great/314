@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Student>
+
+@{
+    ViewData["Title"] = "مدیریت دانشجویان";
+}
+
+<h2>مدیریت دانشجویان</h2>
+
+<p>
+    <a asp-action="AddStudent" class="btn btn-primary">اضافه کردن دانشجو جدید</a>
+</p>
+
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>شماره دانشجویی</th>
+            <th>نام</th>
+            <th>نام خانوادگی</th>
+            <th>ایمیل</th>
+            <th>دانشکده</th>
+            <th>تاریخ ورود</th>
+            <th>عملیات</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.StudentId</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Email</td>
+                <td>@item.Faculty?.Name</td>
+                <td>@item.EntryDate.ToShortDateString()</td>
+                <td>
+                    <form asp-action="DeleteStudent" method="post" onsubmit="return confirm('آیا از حذف این دانشجو مطمئن هستید؟');">
+                        <input type="hidden" name="id" value="@item.Id" />
+                        <button type="submit" class="btn btn-danger btn-sm">حذف</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger mt-3">
+        @TempData["ErrorMessage"]
+    </div>
+}
