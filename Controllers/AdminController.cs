@@ -110,13 +110,8 @@ namespace GolestanSystem.Controllers
 
         public IActionResult AddStudent()
         {
-            ViewBag.Faculties = _context.Faculties
-                .Select(f => new SelectListItem
-                {
-                    Value = f.Id.ToString(),
-                    Text = f.Name
-                })
-                .ToList();
+            ViewBag.Faculties = new SelectList(_context.Faculties, "Id", "Name");
+            ViewBag.Prerequisites = new MultiSelectList(_context.Courses, "Id", "Title");
             return View();
         }
 
@@ -129,14 +124,14 @@ namespace GolestanSystem.Controllers
                 if (_context.Students.Any(s => s.StudentId == model.StudentId))
                 {
                     ModelState.AddModelError("StudentId", "شماره دانشجویی تکراری است");
-                    ViewBag.Faculties = _context.Faculties.ToList();
+                    ViewBag.Faculties = new SelectList(_context.Faculties, "Id", "Name");
                     return View(model);
                 }
 
                 if (_context.Users.Any(u => u.Email == model.Email))
                 {
                     ModelState.AddModelError("Email", "ایمیل تکراری است");
-                    ViewBag.Faculties = _context.Faculties.ToList();
+                    ViewBag.Faculties = new SelectList(_context.Faculties, "Id", "Name");
                     return View(model);
                 }
 
@@ -145,7 +140,8 @@ namespace GolestanSystem.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Students));
             }
-            ViewBag.Faculties = _context.Faculties.ToList();
+
+            ViewBag.Faculties = new SelectList(_context.Faculties, "Id", "Name");
             return View(model);
         }
 
@@ -185,8 +181,20 @@ namespace GolestanSystem.Controllers
 
         public IActionResult AddCourse()
         {
-            ViewBag.Faculties = new SelectList(_context.Faculties, "Id", "Name");
-            ViewBag.Prerequisites = new MultiSelectList(_context.Courses, "Id", "Title");
+            ViewBag.Faculties = _context.Faculties
+                .Select(f => new SelectListItem
+                {
+                    Value = f.Id.ToString(),
+                    Text = f.Name
+                })
+                .ToList();
+            ViewBag.Prerequisites = _context.Courses
+                .Select(c => new SelectListItem
+                {
+                    Value = c.Id.ToString(),
+                    Text = $"{c.Title} ({c.Code})"
+                })
+                .ToList();
             return View();
         }
 
@@ -295,18 +303,14 @@ namespace GolestanSystem.Controllers
                                    ((cc.StartTime <= model.StartTime && cc.EndTime > model.StartTime) ||
                                     (cc.StartTime < model.EndTime && cc.EndTime >= model.EndTime) ||
                                     (cc.StartTime >= model.StartTime && cc.EndTime <= model.EndTime)));
-
                 if (timeConflict)
                 {
                     ModelState.AddModelError("", "تداخل زمانی با کلاس دیگر در همین مکان وجود دارد");
-                    ViewBag.Courses = _context.Courses.ToList();
-                    ViewBag.Professors = _context.Professors.ToList();
+                    SetSelectLists();
                     return View(model);
                 }
-
                 _context.Add(model);
                 await _context.SaveChangesAsync();
-
                 if (professorIds != null && professorIds.Length > 0)
                 {
                     foreach (var profId in professorIds)
@@ -319,12 +323,28 @@ namespace GolestanSystem.Controllers
                     }
                     await _context.SaveChangesAsync();
                 }
-
                 return RedirectToAction(nameof(CourseClasses));
             }
-            ViewBag.Courses = _context.Courses.ToList();
-            ViewBag.Professors = _context.Professors.ToList();
+            SetSelectLists();
             return View(model);
+        }
+
+        private void SetSelectLists()
+        {
+            ViewBag.Professors = _context.Professors
+                .Select(p => new SelectListItem
+                {
+                    Value = p.Id.ToString(),
+                    Text = $"{p.FirstName} {p.LastName}"
+                })
+                .ToList();
+            ViewBag.Courses = _context.Courses
+                .Select(c => new SelectListItem
+                {
+                    Value = c.Id.ToString(),
+                    Text = $"{c.Title} ({c.Code})"
+                })
+                .ToList();
         }
 
         public async Task<IActionResult> ManageClassStudents(int id)

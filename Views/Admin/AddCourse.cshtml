@@ -44,7 +44,7 @@
 
             <div class="form-group mb-3">
                 <label asp-for="FacultyId" class="control-label">دانشکده</label>
-                <select asp-for="FacultyId" class="form-control" asp-items="ViewBag.Faculties">
+                <select asp-for="FacultyId" asp-items="ViewBag.Faculties" class="form-control">
                     <option value="">-- انتخاب دانشکده --</option>
                 </select>
                 <span asp-validation-for="FacultyId" class="text-danger"></span>
@@ -55,7 +55,7 @@
                 <select name="prerequisiteIds" class="form-control" multiple>
                     @foreach (var course in ViewBag.Prerequisites)
                     {
-                        <option value="@course.Id">@course.Title (@course.Code)</option>
+                        <option value="@course.Value">@course.Text</option>
                     }
                 </select>
             </div>
