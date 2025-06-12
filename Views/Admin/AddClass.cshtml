@@ -63,7 +63,7 @@
                 <select name="professorIds" class="form-control" multiple>
                     @foreach (var professor in ViewBag.Professors)
                     {
-                        <option value="@professor.Value">@professor.FirstName @professor.LastName</option>
+                        <option value="@professor.Value">@professor.Text</option>
                     }
                 </select>
             </div>

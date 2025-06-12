@@ -303,10 +303,22 @@ namespace GolestanSystem.Controllers
                                    ((cc.StartTime <= model.StartTime && cc.EndTime > model.StartTime) ||
                                     (cc.StartTime < model.EndTime && cc.EndTime >= model.EndTime) ||
                                     (cc.StartTime >= model.StartTime && cc.EndTime <= model.EndTime)));
+
                 if (timeConflict)
                 {
                     ModelState.AddModelError("", "تداخل زمانی با کلاس دیگر در همین مکان وجود دارد");
-                    SetSelectLists();
+                    ViewBag.Courses = _context.Courses
+                        .Select(c => new SelectListItem
+                        {
+                            Value = c.Id.ToString(),
+                            Text = $"{c.Title} ({c.Code})"
+                        }).ToList();
+                    ViewBag.Professors = _context.Professors
+                        .Select(p => new SelectListItem
+                        {
+                            Value = p.Id.ToString(),
+                            Text = $"{p.FirstName} {p.LastName}"
+                        }).ToList();
                     return View(model);
                 }
                 _context.Add(model);
@@ -325,26 +337,19 @@ namespace GolestanSystem.Controllers
                 }
                 return RedirectToAction(nameof(CourseClasses));
             }
-            SetSelectLists();
-            return View(model);
-        }
-
-        private void SetSelectLists()
-        {
-            ViewBag.Professors = _context.Professors
-                .Select(p => new SelectListItem
-                {
-                    Value = p.Id.ToString(),
-                    Text = $"{p.FirstName} {p.LastName}"
-                })
-                .ToList();
             ViewBag.Courses = _context.Courses
                 .Select(c => new SelectListItem
                 {
                     Value = c.Id.ToString(),
                     Text = $"{c.Title} ({c.Code})"
-                })
-                .ToList();
+                }).ToList();
+            ViewBag.Professors = _context.Professors
+                .Select(p => new SelectListItem
+                {
+                    Value = p.Id.ToString(),
+                    Text = $"{p.FirstName} {p.LastName}"
+                }).ToList();
+            return View(model);
         }
 
         public async Task<IActionResult> ManageClassStudents(int id)
