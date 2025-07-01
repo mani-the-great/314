@@ -17,93 +17,93 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GolestanSystem
 build_property.RootNamespace = GolestanSystem
-build_property.ProjectDir = C:\Users\Alireza\source\repos\GolestanSystem\GolestanSystem\
+build_property.ProjectDir = C:\Users\manis\Desktop\JadidAPP\314\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Alireza\source\repos\GolestanSystem\GolestanSystem
+build_property.MSBuildProjectDirectory = C:\Users\manis\Desktop\JadidAPP\314
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Alireza/source/repos/GolestanSystem/GolestanSystem/Views/Account/Login.cshtml]
+[C:/Users/manis/Desktop/JadidAPP/314/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alireza/source/repos/GolestanSystem/GolestanSystem/Views/Admin/AddClass.cshtml]
+[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/AddClass.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkQ2xhc3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alireza/source/repos/GolestanSystem/GolestanSystem/Views/Admin/AddCourse.cshtml]
+[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/AddCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkQ291cnNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alireza/source/repos/GolestanSystem/GolestanSystem/Views/Admin/AddFaculty.cshtml]
+[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/AddFaculty.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkRmFjdWx0eS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alireza/source/repos/GolestanSystem/GolestanSystem/Views/Admin/AddProfessor.cshtml]
+[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/AddProfessor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkUHJvZmVzc29yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alireza/source/repos/GolestanSystem/GolestanSystem/Views/Admin/AddStudent.cshtml]
+[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/AddStudent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkU3R1ZGVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alireza/source/repos/GolestanSystem/GolestanSystem/Views/Admin/CourseClasses.cshtml]
+[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/CourseClasses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ291cnNlQ2xhc3Nlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alireza/source/repos/GolestanSystem/GolestanSystem/Views/Admin/Courses.cshtml]
+[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/Courses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ291cnNlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alireza/source/repos/GolestanSystem/GolestanSystem/Views/Admin/Faculties.cshtml]
+[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/Faculties.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRmFjdWx0aWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alireza/source/repos/GolestanSystem/GolestanSystem/Views/Admin/Index.cshtml]
+[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alireza/source/repos/GolestanSystem/GolestanSystem/Views/Admin/ManageClassStudents.cshtml]
+[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/ManageClassStudents.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlQ2xhc3NTdHVkZW50cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alireza/source/repos/GolestanSystem/GolestanSystem/Views/Admin/Professors.cshtml]
+[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/Professors.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZmVzc29ycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alireza/source/repos/GolestanSystem/GolestanSystem/Views/Admin/Students.cshtml]
+[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/Students.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3R1ZGVudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alireza/source/repos/GolestanSystem/GolestanSystem/Views/Home/Index.cshtml]
+[C:/Users/manis/Desktop/JadidAPP/314/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alireza/source/repos/GolestanSystem/GolestanSystem/Views/Home/Privacy.cshtml]
+[C:/Users/manis/Desktop/JadidAPP/314/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alireza/source/repos/GolestanSystem/GolestanSystem/Views/Shared/Error.cshtml]
+[C:/Users/manis/Desktop/JadidAPP/314/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alireza/source/repos/GolestanSystem/GolestanSystem/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/manis/Desktop/JadidAPP/314/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alireza/source/repos/GolestanSystem/GolestanSystem/Views/_ViewImports.cshtml]
+[C:/Users/manis/Desktop/JadidAPP/314/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alireza/source/repos/GolestanSystem/GolestanSystem/Views/_ViewStart.cshtml]
+[C:/Users/manis/Desktop/JadidAPP/314/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Alireza/source/repos/GolestanSystem/GolestanSystem/Views/Shared/_Layout.cshtml]
+[C:/Users/manis/Desktop/JadidAPP/314/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-igwmxww2os
