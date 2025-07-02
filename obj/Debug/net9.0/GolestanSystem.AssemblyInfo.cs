@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GolestanSystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f65e85c8056924af0220ff6a301e466b58c6b104")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+692892a8f691a36724dce48c13f81c849f326448")]
 [assembly: System.Reflection.AssemblyProductAttribute("GolestanSystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GolestanSystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

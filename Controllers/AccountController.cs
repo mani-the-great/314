@@ -6,14 +6,14 @@ using System.Security.Claims;
 public class AccountController : Controller
 {
     [HttpGet]
-    public IActionResult Login(string returnUrl = null)
+    public IActionResult Login(string returnUrl)
     {
         ViewData["ReturnUrl"] = returnUrl;
         return View();
     }
 
     [HttpPost]
-    public async Task<IActionResult> Login(string username, string password, string returnUrl = null)
+    public async Task<IActionResult> Login(string username, string password, string returnUrl)
     {
         if (IsValidUser(username, password))
         {
@@ -29,15 +29,14 @@ public class AccountController : Controller
             await HttpContext.SignInAsync(
                 CookieAuthenticationDefaults.AuthenticationScheme,
                 new ClaimsPrincipal(claimsIdentity));
-
             return LocalRedirect(returnUrl ?? "/");
         }
 
         ModelState.AddModelError(string.Empty, "نام کاربری یا رمز عبور نادرست است");
+        ViewData["Login"] = "Failed";
         return View();
     }
 
-    [HttpPost]
     public async Task<IActionResult> Logout()
     {
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
