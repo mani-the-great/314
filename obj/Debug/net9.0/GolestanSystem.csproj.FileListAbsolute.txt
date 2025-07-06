@@ -599,6 +599,7 @@ C:\Users\Alireza\314\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Cac
 C:\Users\Alireza\314\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Alireza\314\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Alireza\314\obj\Debug\net9.0\GolestanSystem.csproj.AssemblyReference.cache
+C:\Users\Alireza\314\obj\Debug\net9.0\rpswa.dswa.cache.json
 C:\Users\Alireza\314\obj\Debug\net9.0\GolestanSystem.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Alireza\314\obj\Debug\net9.0\GolestanSystem.AssemblyInfoInputs.cache
 C:\Users\Alireza\314\obj\Debug\net9.0\GolestanSystem.AssemblyInfo.cs
@@ -607,6 +608,9 @@ C:\Users\Alireza\314\obj\Debug\net9.0\GolestanSystem.MvcApplicationPartsAssembly
 C:\Users\Alireza\314\obj\Debug\net9.0\GolestanSystem.RazorAssemblyInfo.cache
 C:\Users\Alireza\314\obj\Debug\net9.0\GolestanSystem.RazorAssemblyInfo.cs
 C:\Users\Alireza\314\obj\Debug\net9.0\GolestanSystem.sourcelink.json
+C:\Users\Alireza\314\obj\Debug\net9.0\rjimswa.dswa.cache.json
+C:\Users\Alireza\314\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
+C:\Users\Alireza\314\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 C:\Users\Alireza\314\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Alireza\314\obj\Debug\net9.0\scopedcss\bundle\GolestanSystem.styles.css
 C:\Users\Alireza\314\obj\Debug\net9.0\scopedcss\projectbundle\GolestanSystem.bundle.scp.css
@@ -685,7 +689,3 @@ C:\Users\Alireza\314\obj\Debug\net9.0\GolestanSystem.pdb
 C:\Users\Alireza\314\obj\Debug\net9.0\GolestanSystem.genruntimeconfig.cache
 C:\Users\Alireza\314\obj\Debug\net9.0\ref\GolestanSystem.dll
 C:\Users\Alireza\314\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
-C:\Users\Alireza\314\obj\Debug\net9.0\rpswa.dswa.cache.json
-C:\Users\Alireza\314\obj\Debug\net9.0\rjimswa.dswa.cache.json
-C:\Users\Alireza\314\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
-C:\Users\Alireza\314\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json

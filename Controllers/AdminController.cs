@@ -119,22 +119,13 @@ namespace GolestanSystem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddStudent(Student model)
         {
+            if (_context.Students.Any(s => s.StudentId == model.StudentId))
+            {
+                ModelState.AddModelError("StudentId", "این شماره دانشجویی قبلا ثبت شده است");
+            }
+
             if (ModelState.IsValid)
             {
-                if (_context.Students.Any(s => s.StudentId == model.StudentId))
-                {
-                    ModelState.AddModelError("StudentId", "شماره دانشجویی تکراری است");
-                    ViewBag.Faculties = new SelectList(_context.Faculties, "Id", "Name");
-                    return View(model);
-                }
-
-                if (_context.Users.Any(u => u.Email == model.Email))
-                {
-                    ModelState.AddModelError("Email", "ایمیل تکراری است");
-                    ViewBag.Faculties = new SelectList(_context.Faculties, "Id", "Name");
-                    return View(model);
-                }
-
                 model.Role = "Student";
                 _context.Add(model);
                 await _context.SaveChangesAsync();
