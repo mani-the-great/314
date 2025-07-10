@@ -1,25 +1,39 @@
-﻿using Microsoft.AspNetCore.Authentication;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using GolestanSystem.Data;
+using GolestanSystem.Models;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 public class AccountController : Controller
 {
+    private readonly ApplicationDbContext _context;
+
+    public AccountController(ApplicationDbContext context)
+    {
+        _context = context;
+    }
+
     [HttpGet]
-    public IActionResult Login(string returnUrl)
+    public IActionResult Login(string returnUrl = null)
     {
         ViewData["ReturnUrl"] = returnUrl;
         return View();
     }
 
     [HttpPost]
-    public async Task<IActionResult> Login(string username, string password, string returnUrl)
+    public async Task<IActionResult> Login(string username, string password, string returnUrl = null)
     {
-        if (IsValidUser(username, password))
+        var user = await _context.Users
+            .FirstOrDefaultAsync(u => u.FirstName == username || u.LastName == username);
+
+        if (username == "admin" && password == "password")
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, username),
+                new Claim(ClaimTypes.NameIdentifier, "1"),
+                new Claim(ClaimTypes.Name, "مدیر سیستم"),
                 new Claim(ClaimTypes.Role, "Admin")
             };
 
@@ -29,22 +43,50 @@ public class AccountController : Controller
             await HttpContext.SignInAsync(
                 CookieAuthenticationDefaults.AuthenticationScheme,
                 new ClaimsPrincipal(claimsIdentity));
-            return LocalRedirect(returnUrl ?? "/");
+
+            return RedirectToAction("Index", "Admin");
         }
 
-        ModelState.AddModelError(string.Empty, "نام کاربری یا رمز عبور نادرست است");
+        if (user != null)
+        {
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.GivenName, user.FirstName),
+                new Claim(ClaimTypes.Surname, user.LastName),
+                new Claim(ClaimTypes.Role, user.Role)
+            };
+
+            var claimsIdentity = new ClaimsIdentity(
+                claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+            await HttpContext.SignInAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(claimsIdentity));
+
+            return RedirectToLocal(returnUrl);
+        }
+
         ViewData["Login"] = "Failed";
         return View();
     }
 
+    [HttpPost]
     public async Task<IActionResult> Logout()
     {
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         return RedirectToAction("Index", "Home");
     }
 
-    private bool IsValidUser(string username, string password)
+    private IActionResult RedirectToLocal(string returnUrl)
     {
-        return username == "admin" && password == "password";
+        if (Url.IsLocalUrl(returnUrl))
+        {
+            return Redirect(returnUrl);
+        }
+        else
+        {
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
