@@ -1,0 +1,33 @@
+﻿@using GolestanSystem.Models.ViewModels
+@model IEnumerable<StudentGradeViewModel>
+
+<h2>نمرات من</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>نام درس</th>
+            <th>کد درس</th>
+            <th>تعداد واحد</th>
+            <th>نمره</th>
+            <th>وضعیت</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CourseTitle</td>
+                <td>@item.CourseCode</td>
+                <td>@item.Credits</td>
+                <td>@item.Grade</td>
+                <td>@(item.IsPassed ? "قبول" : "مردود")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="alert alert-info">
+    <p>تعداد دروس پاس شده: @ViewBag.PassedCoursesCount</p>
+    <p>معدل: @(ViewBag.GPA?.ToString("0.00") ?? "محاسبه نشده")</p>
+</div>
