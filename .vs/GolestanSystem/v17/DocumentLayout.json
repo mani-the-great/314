@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Alireza\\314\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|c:\\users\\alireza\\314\\views\\student\\mygrades.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|solutionrelative:views\\student\\mygrades.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|c:\\users\\alireza\\314\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MyGrades.cshtml",
-              "DocumentMoniker": "C:\\Users\\Alireza\\314\\Views\\Student\\MyGrades.cshtml",
-              "RelativeDocumentMoniker": "Views\\Student\\MyGrades.cshtml",
-              "ToolTip": "C:\\Users\\Alireza\\314\\Views\\Student\\MyGrades.cshtml",
-              "RelativeToolTip": "Views\\Student\\MyGrades.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Alireza\\314\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Alireza\\314\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwDQAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-11T16:31:16.865Z",
+              "WhenOpened": "2025-07-12T21:45:48.09Z",
               "EditorCaption": ""
             }
           ]

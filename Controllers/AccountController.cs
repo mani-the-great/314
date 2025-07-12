@@ -25,7 +25,7 @@ public class AccountController : Controller
     [HttpPost]
     public async Task<IActionResult> Login(string username, string password, string returnUrl = null)
     {
-        if (username == "admin" && password == "admin123")
+        if (username == "admin" && password == "password")
         {
             var adminClaims = new List<Claim>
             {
