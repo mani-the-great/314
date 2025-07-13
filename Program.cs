@@ -27,6 +27,7 @@ builder.Services.AddAuthentication(options =>
     options.AccessDeniedPath = "/Account/AccessDenied";
     options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
 });
+builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -45,6 +46,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapStaticAssets();
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
