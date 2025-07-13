@@ -80,6 +80,33 @@ namespace GolestanSystem.Controllers
             return View(grades);
         }
 
+        public async Task<IActionResult> MyInfo()
+        {
+            var studentId = GetCurrentStudentId();
+
+            var student = await _context.Students
+                .Include(s => s.Faculty)
+                .FirstOrDefaultAsync(s => s.Id == studentId);
+
+            if (student == null)
+            {
+                return NotFound();
+            }
+
+            var model = new StudentInfoViewModel
+            {
+                StudentId = student.StudentId,
+                FullName = $"{student.FirstName} {student.LastName}",
+                Email = student.Email,
+                PhoneNumber = student.PhoneNumber,
+                EntryDate = student.EntryDate.ToString("yyyy/MM/dd"),
+                FacultyName = student.Faculty?.Name ?? "تعیین نشده",
+                RegisterDate = student.RegisterDate.ToString("yyyy/MM/dd")
+            };
+
+            return View(model);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DropCourse(int courseClassId)

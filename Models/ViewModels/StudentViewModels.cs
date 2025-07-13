@@ -18,4 +18,15 @@
         public decimal Grade { get; set; }
         public bool IsPassed { get; set; }
     }
+
+    public class StudentInfoViewModel
+    {
+        public string StudentId { get; set; }
+        public string FullName { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+        public string EntryDate { get; set; }
+        public string FacultyName { get; set; }
+        public string RegisterDate { get; set; }
+    }
 }
