@@ -63,13 +63,10 @@ namespace GolestanSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(model);
+                _context.Update(model);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(ManageClassStudents));
             }
-            ViewBag.Courses = _context.Courses.ToList();
-            ViewBag.Students = _context.Students.ToList();
-            return View(model);
+            return RedirectToAction(nameof(SubmitStudentScore));
         }
 
         public async Task<IActionResult> RemoveStudentFromClass(int classId, int studentId)
