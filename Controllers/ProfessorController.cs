@@ -43,6 +43,49 @@ namespace GolestanSystem.Controllers
             ViewBag.AvailableStudents = availableStudents;
             return View(courseClass);
         }
+
+        public async Task<IActionResult> SubmitStudentScore(int id)
+        {
+            var coursestudent = await _context.CourseStudents
+            .Include(cs => cs.Student)
+            .Include(cs => cs.CourseClass.Course)
+            .FirstOrDefaultAsync(cs => cs.StudentId == id);
+            if (coursestudent == null)
+            {
+                return NotFound();
+            }
+            return View(coursestudent);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SubmitStudentScore(CourseStudent model)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(model);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(ManageClassStudents));
+            }
+            ViewBag.Courses = _context.Courses.ToList();
+            ViewBag.Students = _context.Students.ToList();
+            return View(model);
+        }
+
+        public async Task<IActionResult> RemoveStudentFromClass(int classId, int studentId)
+        {
+            var enrollment = await _context.CourseStudents
+                .FirstOrDefaultAsync(cs => cs.StudentId == studentId && cs.CourseClassId == classId);
+
+            if (enrollment != null)
+            {
+                _context.CourseStudents.Remove(enrollment);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToAction(nameof(ManageClassStudents), new { id = classId });
+        }
+
         public ProfessorController(ApplicationDbContext context)
         {
             _context = context;

@@ -1,0 +1,29 @@
+﻿@model CourseStudent
+@{
+	ViewData["Title"] = "ثبت نمره دانشجو";
+}
+<h2>ثبت نمره دانشجو</h2>
+<p>
+	نام و نام خانوادگی دانشجو: @Model.Student.FirstName @Model.Student.LastName
+	<br />
+	عنوان درس: @Model.CourseClass.Course.Title
+	<br />
+	نمره ثبت شده قبلی: @{
+		if (Model.Grade.ToString() != "")
+			@Model.Grade
+		else
+		@("تعیین نشده")
+	}
+</p>
+<form asp-action="SubmitStudentScore">
+	<table >
+		<tr>
+			<td>نمره: </td>
+			<td><input type="text" asp-for="Grade" class="form-control"  /></td>
+		</tr>
+		<tr style="text-align: left">
+			<td><a asp-action="" class="btn btn-secondary">بازگشت</a></td>
+			<td><input type="submit" value="ثبت" class="btn btn-primary" /></td>
+		</tr>
+	</table>
+</form>

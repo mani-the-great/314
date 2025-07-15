@@ -23,7 +23,7 @@
                 <th>شماره دانشجویی</th>
                 <th>نام</th>
                 <th>نام خانوادگی</th>
-                <th>عملیات</th>
+                <th colspan="2">عملیات</th>
             </tr>
         </thead>
         <tbody>
@@ -39,6 +39,9 @@
                             <input type="hidden" name="studentId" value="@item.StudentId" />
                             <button type="submit" class="btn btn-danger btn-sm">حذف از کلاس</button>
                         </form>
+                    </td>
+                    <td>
+                        <a asp-action="SubmitStudentScore" asp-route-id="@item.StudentId" class="btn btn-info btn-sm">ثبت و مشاهده نمره</a>
                     </td>
                 </tr>
             }
