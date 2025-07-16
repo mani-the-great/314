@@ -1,0 +1,34 @@
+﻿@model GolestanSystem.Models.ViewModels.StudentInfoViewModel
+@{
+    ViewData["Title"] = "اطلاعات من";
+}
+
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h3>اطلاعات دانشجویی</h3>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">شماره دانشجویی:</dt>
+            <dd class="col-sm-9">@Model.StudentId</dd>
+
+            <dt class="col-sm-3">نام کامل:</dt>
+            <dd class="col-sm-9">@Model.FullName</dd>
+
+            <dt class="col-sm-3">پست الکترونیکی:</dt>
+            <dd class="col-sm-9">@Model.Email</dd>
+
+            <dt class="col-sm-3">شماره تلفن:</dt>
+            <dd class="col-sm-9">@(Model.PhoneNumber ?? "ثبت نشده")</dd>
+
+            <dt class="col-sm-3">تاریخ ورود:</dt>
+            <dd class="col-sm-9">@Model.EntryDate</dd>
+
+            <dt class="col-sm-3">دانشکده:</dt>
+            <dd class="col-sm-9">@Model.FacultyName</dd>
+
+            <dt class="col-sm-3">تاریخ ثبت‌نام:</dt>
+            <dd class="col-sm-9">@Model.RegisterDate</dd>
+        </dl>
+    </div>
+</div>

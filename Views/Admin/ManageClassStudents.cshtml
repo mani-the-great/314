@@ -70,14 +70,12 @@ else
 
         <div class="form-group">
             <input type="submit" value="اضافه کردن به کلاس" class="btn btn-primary" />
-            <a asp-action="CourseClasses" class="btn btn-secondary">بازگشت</a>
         </div>
     </form>
 }
 else
 {
     <div class="alert alert-warning">هیچ دانشجوی آزادی برای ثبت‌نام در این کلاس وجود ندارد</div>
-    <a asp-action="CourseClasses" class="btn btn-secondary">بازگشت</a>
 }
 
 @if (TempData["ErrorMessage"] != null)

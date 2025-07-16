@@ -1,0 +1,47 @@
+﻿@using GolestanSystem.Models.ViewModels
+@model IEnumerable<StudentCourseViewModel>
+
+@{
+    ViewData["Title"] = "کلاس‌های من";
+}
+
+<h2>کلاس‌های ثبت‌نام شده</h2>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>عنوان درس</th>
+            <th>کد درس</th>
+            <th>زمان کلاس</th>
+            <th>زمان امتحان</th>
+            <th>اساتید</th>
+            <th>عملیات</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CourseTitle</td>
+                <td>@item.CourseCode</td>
+                <td>@item.ClassTime</td>
+                <td>@item.ExamTime.ToString("yyyy/MM/dd HH:mm")</td>
+                <td>@item.Professors</td>
+                <td>
+                    <form asp-action="DropCourse" method="post"
+                          onsubmit="return confirm('آیا از لغو ثبت‌نام در این کلاس مطمئن هستید؟');">
+                        <input type="hidden" name="courseClassId" value="@item.CourseClassId" />
+                        <button type="submit" class="btn btn-danger btn-sm">لغو ثبت‌نام</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
