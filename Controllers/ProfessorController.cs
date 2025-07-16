@@ -41,15 +41,17 @@ namespace GolestanSystem.Controllers
                 .ToListAsync();
 
             ViewBag.AvailableStudents = availableStudents;
+            HttpContext.Session.SetString("ccID", id.ToString());
             return View(courseClass);
         }
 
         public async Task<IActionResult> SubmitStudentScore(int id)
         {
+            ViewData["ccID"] = HttpContext.Session.GetString("ccID");
             var coursestudent = await _context.CourseStudents
             .Include(cs => cs.Student)
             .Include(cs => cs.CourseClass.Course)
-            .FirstOrDefaultAsync(cs => cs.StudentId == id);
+            .FirstOrDefaultAsync(cs => cs.StudentId == id && cs.CourseClassId.ToString() == ViewData["ccID"].ToString());
             if (coursestudent == null)
             {
                 return NotFound();

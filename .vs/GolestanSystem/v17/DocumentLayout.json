@@ -3,32 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|c:\\users\\manis\\desktop\\jadidapp\\314\\views\\professor\\manageclassstudents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|solutionrelative:views\\professor\\manageclassstudents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|c:\\users\\manis\\desktop\\jadidapp\\314\\views\\professor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|solutionrelative:views\\professor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|c:\\users\\manis\\desktop\\jadidapp\\314\\views\\admin\\manageclassstudents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|solutionrelative:views\\admin\\manageclassstudents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|c:\\users\\manis\\desktop\\jadidapp\\314\\controllers\\professorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|solutionrelative:controllers\\professorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|c:\\users\\manis\\desktop\\jadidapp\\314\\views\\professor\\submitstudentscore.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|solutionrelative:views\\professor\\submitstudentscore.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|c:\\users\\manis\\desktop\\jadidapp\\314\\controllers\\professorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|solutionrelative:controllers\\professorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|c:\\users\\manis\\desktop\\jadidapp\\314\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|c:\\users\\manis\\desktop\\jadidapp\\314\\views\\admin\\manageclassstudents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|solutionrelative:views\\admin\\manageclassstudents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|c:\\users\\manis\\desktop\\jadidapp\\314\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|c:\\users\\manis\\desktop\\jadidapp\\314\\views\\professor\\manageclassstudents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|solutionrelative:views\\professor\\manageclassstudents.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|c:\\users\\manis\\desktop\\jadidapp\\314\\models\\courseclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|solutionrelative:models\\courseclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|c:\\users\\manis\\desktop\\jadidapp\\314\\views\\professor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|solutionrelative:views\\professor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{465277DD-D103-C048-0772-CE15E74BFD88}|GolestanSystem.csproj|c:\\users\\manis\\desktop\\jadidapp\\314\\views\\admin\\courseclasses.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -90,72 +94,80 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAkwD0AAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T20:12:41.801Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "SubmitStudentScore.cshtml",
               "DocumentMoniker": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Views\\Professor\\SubmitStudentScore.cshtml",
               "RelativeDocumentMoniker": "Views\\Professor\\SubmitStudentScore.cshtml",
               "ToolTip": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Views\\Professor\\SubmitStudentScore.cshtml",
               "RelativeToolTip": "Views\\Professor\\SubmitStudentScore.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAUwBgAAABNAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAUwBgAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-13T19:53:27.236Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-13T19:53:27.236Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ManageClassStudents.cshtml",
               "DocumentMoniker": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Views\\Admin\\ManageClassStudents.cshtml",
               "RelativeDocumentMoniker": "Views\\Admin\\ManageClassStudents.cshtml",
               "ToolTip": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Views\\Admin\\ManageClassStudents.cshtml",
               "RelativeToolTip": "Views\\Admin\\ManageClassStudents.cshtml",
-              "ViewState": "AgIAABYAAAAAAAAAAAAAABYAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAkwCMAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-12T15:11:59.184Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-12T15:11:59.184Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
               "ToolTip": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Controllers\\AdminController.cs",
               "RelativeToolTip": "Controllers\\AdminController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYBAABMAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAACYBAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-12T16:48:09.973Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-12T16:48:09.973Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "ProfessorController.cs",
               "DocumentMoniker": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Controllers\\ProfessorController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProfessorController.cs",
               "ToolTip": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Controllers\\ProfessorController.cs",
               "RelativeToolTip": "Controllers\\ProfessorController.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADEAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-14T16:44:48.086Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "ManageClassStudents.cshtml",
               "DocumentMoniker": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Views\\Professor\\ManageClassStudents.cshtml",
               "RelativeDocumentMoniker": "Views\\Professor\\ManageClassStudents.cshtml",
               "ToolTip": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Views\\Professor\\ManageClassStudents.cshtml",
               "RelativeToolTip": "Views\\Professor\\ManageClassStudents.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAABgAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAkwCsAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-12T16:59:28.036Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-12T16:59:28.036Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "CourseClasses.cshtml",
               "DocumentMoniker": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Views\\Admin\\CourseClasses.cshtml",
               "RelativeDocumentMoniker": "Views\\Admin\\CourseClasses.cshtml",
@@ -163,8 +175,7 @@
               "RelativeToolTip": "Views\\Admin\\CourseClasses.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-12T16:46:38.137Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-12T16:46:38.137Z"
             },
             {
               "$type": "Document",
@@ -176,12 +187,11 @@
               "RelativeToolTip": "Models\\CourseClass.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-14T15:40:39.881Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-14T15:40:39.881Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Views\\Professor\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Professor\\Index.cshtml",
@@ -189,12 +199,11 @@
               "RelativeToolTip": "Views\\Professor\\Index.cshtml",
               "ViewState": "AgIAACUAAAAAAAAAAAAkwD0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-15T19:15:25.917Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T19:15:25.917Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "CourseStudent.cs",
               "DocumentMoniker": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Models\\CourseStudent.cs",
               "RelativeDocumentMoniker": "Models\\CourseStudent.cs",
@@ -202,12 +211,11 @@
               "RelativeToolTip": "Models\\CourseStudent.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-14T16:34:45.218Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-14T16:34:45.218Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "AddClass.cshtml",
               "DocumentMoniker": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Views\\Admin\\AddClass.cshtml",
               "RelativeDocumentMoniker": "Views\\Admin\\AddClass.cshtml",
@@ -219,7 +227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -227,12 +235,11 @@
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAACQAAAAAAAAAAAAkwCUAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-15T19:37:11.362Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-15T19:37:11.362Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -244,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Professor.cs",
               "DocumentMoniker": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Models\\Professor.cs",
               "RelativeDocumentMoniker": "Models\\Professor.cs",
@@ -256,7 +263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Views\\Admin\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Admin\\Index.cshtml",
@@ -268,7 +275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Student.cs",
               "DocumentMoniker": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Models\\Student.cs",
               "RelativeDocumentMoniker": "Models\\Student.cs",
@@ -280,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -292,7 +299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
@@ -304,7 +311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "AccessDenied.cshtml",
               "DocumentMoniker": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Views\\Account\\AccessDenied.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\AccessDenied.cshtml",
@@ -316,7 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Logout.cshtml",
               "DocumentMoniker": "C:\\Users\\manis\\Desktop\\JadidAPP\\314\\Views\\Account\\Logout.cshtml",
               "RelativeDocumentMoniker": "Views\\Account\\Logout.cshtml",

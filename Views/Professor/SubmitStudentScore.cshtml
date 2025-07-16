@@ -22,7 +22,7 @@
 			<td><input type="text" asp-for="Grade" id="grade" class="form-control" value="" /></td>
 		</tr>
 		<tr style="text-align: left">
-			<td><a asp-action="ManageClassStudents" asp-route-id="@Model.CourseClassId" class="btn btn-secondary">بازگشت</a></td>
+			<td><a asp-action="ManageClassStudents" asp-route-id="@ViewData["ccID"]" class="btn btn-secondary">بازگشت</a></td>
 			<td><input type="submit" value="ثبت" class="btn btn-primary" /></td>
 		</tr>
 	</table>
