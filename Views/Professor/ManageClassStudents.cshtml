@@ -1,0 +1,63 @@
+﻿@model CourseClass
+
+@{
+    ViewData["Title"] = "مدیریت دانشجویان کلاس";
+}
+
+<h2>مدیریت دانشجویان کلاس</h2>
+<h4>@Model.Course.Title (@Model.Course.Code)</h4>
+<p>
+    زمان: @Model.Day.ToString() @Model.StartTime.ToString(@"hh\:mm") - @Model.EndTime.ToString(@"hh\:mm")<br />
+    مکان: @Model.Building - @Model.RoomNumber<br />
+    ظرفیت: @Model.Students.Count / @Model.Capacity
+</p>
+
+<hr />
+
+<h5>دانشجویان ثبت‌نام شده</h5>
+@if (Model.Students.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>شماره دانشجویی</th>
+                <th>نام</th>
+                <th>نام خانوادگی</th>
+                <th colspan="2">عملیات</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Students)
+            {
+                <tr>
+                    <td>@item.Student.StudentId</td>
+                    <td>@item.Student.FirstName</td>
+                    <td>@item.Student.LastName</td>
+                    <td>
+                        <form asp-action="RemoveStudentFromClass" method="post" onsubmit="return confirm('آیا از حذف این دانشجو از کلاس مطمئن هستید؟');">
+                            <input type="hidden" name="classId" value="@Model.Id" />
+                            <input type="hidden" name="studentId" value="@item.StudentId" />
+                            <button type="submit" class="btn btn-danger btn-sm">حذف از کلاس</button>
+                        </form>
+                    </td>
+                    <td>
+                        <a asp-action="SubmitStudentScore" asp-route-id="@item.StudentId" class="btn btn-info btn-sm">ثبت و مشاهده نمره</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">هیچ دانشجویی در این کلاس ثبت‌نام نکرده است</div>
+}
+
+<hr />
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger mt-3">
+        @TempData["ErrorMessage"]
+    </div>
+}

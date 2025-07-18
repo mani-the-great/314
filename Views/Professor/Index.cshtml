@@ -1,0 +1,61 @@
+﻿@model IEnumerable<CourseClass>
+
+@{
+    ViewData["Title"] = "داشبورد استاد";
+}
+
+<center><h2>داشبورد استاد</h2></center>
+<h3>فهرست کلاس های شما</h3>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>عنوان درس</th>
+            <th>کد درس</th>
+            <th>زمان برگزاری</th>
+            <th>مکان</th>
+            <th>ظرفیت</th>
+            <th>اساتید</th>
+            <th>عملیات</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            @foreach(var professor in item.Professors)
+            {
+                if (professor.Professor.ProfessorId.ToString() == ViewData["profID"].ToString())
+                {
+                    <tr>
+                        <td>@item.Course.Title</td>
+                        <td>@item.Course.Code</td>
+                        <td>
+                            @item.Day.ToString()
+                            @item.StartTime.ToString(@"hh\:mm") - @item.EndTime.ToString(@"hh\:mm")
+                        </td>
+                        <td>@item.Building - @item.RoomNumber</td>
+                        <td>@item.Capacity</td>
+                        <td>
+                            @foreach (var prof in item.Professors)
+                            {
+                                <span>@prof.Professor.FirstName @prof.Professor.LastName</span>
+
+                                <br />
+                            }
+                        </td>
+                        <td>
+                            <a asp-action="ManageClassStudents" asp-route-id="@item.Id" class="btn btn-info btn-sm">مدیریت دانشجویان</a>
+                        </td>
+                    </tr>
+                }
+            }
+            
+        }
+    </tbody>
+</table>
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger mt-3">
+        @TempData["ErrorMessage"]
+    </div>
+}

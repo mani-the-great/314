@@ -1,0 +1,34 @@
+﻿@model CourseStudent
+@{
+	ViewData["Title"] = "ثبت نمره دانشجو";
+}
+<h2>ثبت نمره دانشجو</h2>
+<p>
+	نام و نام خانوادگی دانشجو: @Model.Student.FirstName @Model.Student.LastName
+	<br />
+	عنوان درس: @Model.CourseClass.Course.Title
+	<br />
+	نمره ثبت شده قبلی: @{
+		if (Model.Grade.ToString() != "")
+			@Model.Grade
+		else
+		@("تعیین نشده")
+	}
+</p>
+<form asp-action="SubmitStudentScore" name="login_form" onsubmit="event.preventDefault(); if(document.getElementById('grade').value>20){ alert('نمره وارد شده نمی تواند بیشتر از 20 باشد.'); } else if(document.getElementById('grade').value<0) { alert('نمره وارد شده نمی تواند کمتر از صفر باشد.') } else if(document.getElementById('grade').value == ''){ alert('لطفا ابتدا نمره را وارد کنید'); } else{ document.login_form.submit(); }">
+	<table >
+		<tr>
+			<td>نمره: </td>
+			<td><input type="text" asp-for="Grade" id="grade" class="form-control" value="" /></td>
+		</tr>
+		<tr style="text-align: left">
+			<td><a asp-action="ManageClassStudents" asp-route-id="@ViewData["ccID"]" class="btn btn-secondary">بازگشت</a></td>
+			<td><input type="submit" value="ثبت" class="btn btn-primary" /></td>
+		</tr>
+	</table>
+	<input type="hidden" asp-for="Id" value="@Model.Id" />
+	<input type="hidden" asp-for="StudentId" value="@Model.StudentId" />
+	<input type="hidden" asp-for="Student" value="@Model.Student" />
+	<input type="hidden" asp-for="CourseClassId" value="@Model.CourseClassId" />
+	<input type="hidden" asp-for="CourseClass" value="@Model.CourseClass" />
+</form>

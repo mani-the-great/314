@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GolestanSystem.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250706151617_InitialCreate")]
+    [Migration("20250701153623_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

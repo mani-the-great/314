@@ -1,20 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using GolestanSystem.Data;
-using GolestanSystem.Models;
-using Microsoft.AspNetCore.Authentication;
+﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+
 
 public class AccountController : Controller
 {
-    private readonly ApplicationDbContext _context;
-
-    public AccountController(ApplicationDbContext context)
-    {
-        _context = context;
-    }
-
     [HttpGet]
     public IActionResult Login(string returnUrl = null)
     {
@@ -79,7 +70,10 @@ public class AccountController : Controller
             var professorIdentity = new ClaimsIdentity(professorClaims, CookieAuthenticationDefaults.AuthenticationScheme);
             await HttpContext.SignInAsync(new ClaimsPrincipal(professorIdentity));
 
-            return RedirectToAction("Index", "Professor");
+            await HttpContext.SignInAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(claimsIdentity));
+            return LocalRedirect(returnUrl ?? "/");
         }
 
         ViewData["Login"] = "Failed";
@@ -93,15 +87,8 @@ public class AccountController : Controller
         return RedirectToAction("Index", "Home");
     }
 
-    private IActionResult RedirectToLocal(string returnUrl)
+    private bool IsValidUser(string username, string password)
     {
-        if (Url.IsLocalUrl(returnUrl))
-        {
-            return Redirect(returnUrl);
-        }
-        else
-        {
-            return RedirectToAction("Index", "Home");
-        }
+        return username == "admin" && password == "password";
     }
 }
