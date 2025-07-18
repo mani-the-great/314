@@ -1,84 +1,90 @@
-﻿using GolestanSystem.Data;
-using Microsoft.AspNetCore.Authentication;
+﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 
 public class AccountController : Controller
 {
-    private readonly ApplicationDbContext _context;
-    public AccountController(ApplicationDbContext context)
-    {
-        _context = context;
-    }
     [HttpGet]
-    public IActionResult Login(string returnUrl)
+    public IActionResult Login(string returnUrl = null)
     {
         ViewData["ReturnUrl"] = returnUrl;
         return View();
     }
 
     [HttpPost]
-    public async Task<IActionResult> Login(string username, string password, string returnUrl)
+    public async Task<IActionResult> Login(string username, string password, string returnUrl = null)
     {
-        if (IsValidUser(username, password))
+        if (username == "admin" && password == "password")
         {
-            var claims = new List<Claim>
+            var adminClaims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, username),
+                new Claim(ClaimTypes.NameIdentifier, "0"),
+                new Claim(ClaimTypes.Name, "مدیر سیستم"),
                 new Claim(ClaimTypes.Role, "Admin")
             };
 
-            var claimsIdentity = new ClaimsIdentity(
-                claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var adminIdentity = new ClaimsIdentity(adminClaims, CookieAuthenticationDefaults.AuthenticationScheme);
+            await HttpContext.SignInAsync(new ClaimsPrincipal(adminIdentity));
+
+            return RedirectToAction("Index", "Admin");
+        }
+
+        var student = await _context.Students
+            .FirstOrDefaultAsync(s =>
+                (s.StudentId == username || s.Email == username) &&
+                s.PasswordHash == password);
+
+        if (student != null)
+        {
+            var studentClaims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, student.Id.ToString()),
+                new Claim(ClaimTypes.Name, $"{student.FirstName} {student.LastName}"),
+                new Claim(ClaimTypes.Role, "Student"),
+                new Claim("StudentId", student.StudentId)
+            };
+
+            var studentIdentity = new ClaimsIdentity(studentClaims, CookieAuthenticationDefaults.AuthenticationScheme);
+            await HttpContext.SignInAsync(new ClaimsPrincipal(studentIdentity));
+
+            return RedirectToAction("Index", "Student");
+        }
+
+        var professor = await _context.Professors
+            .FirstOrDefaultAsync(p =>
+                (p.ProfessorId == username || p.Email == username) &&
+                p.PasswordHash == password);
+
+        if (professor != null)
+        {
+            var professorClaims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, professor.Id.ToString()),
+                new Claim(ClaimTypes.Name, $"{professor.FirstName} {professor.LastName}"),
+                new Claim(ClaimTypes.Role, "Professor"),
+                new Claim("ProfessorId", professor.ProfessorId)
+            };
+
+            var professorIdentity = new ClaimsIdentity(professorClaims, CookieAuthenticationDefaults.AuthenticationScheme);
+            await HttpContext.SignInAsync(new ClaimsPrincipal(professorIdentity));
 
             await HttpContext.SignInAsync(
                 CookieAuthenticationDefaults.AuthenticationScheme,
                 new ClaimsPrincipal(claimsIdentity));
-            return LocalRedirect(returnUrl ?? "/Admin");
-        }
-        else
-        {
-            var professors = await _context.Professors.Include(p => p.Faculty).ToListAsync();
-            for (int i=0; i < _context.Professors.Count(); i++)
-            {
-                if(professors[i].PasswordHash==password && professors[i].Email == username)
-                {
-                    var claims = new List<Claim>
-                    {
-                    new Claim(ClaimTypes.Name, username),
-                    new Claim(ClaimTypes.Role, "Professor")
-                    };
-
-                    var claimsIdentity = new ClaimsIdentity(
-                        claims, CookieAuthenticationDefaults.AuthenticationScheme);
-
-                    await HttpContext.SignInAsync(
-                        CookieAuthenticationDefaults.AuthenticationScheme,
-                        new ClaimsPrincipal(claimsIdentity));
-                    HttpContext.Session.SetString("profID", professors[i].ProfessorId.ToString());
-                    return LocalRedirect(returnUrl ?? "/Professor");
-                }
-            }
+            return LocalRedirect(returnUrl ?? "/");
         }
 
-        ModelState.AddModelError(string.Empty, "نام کاربری یا رمز عبور نادرست است");
         ViewData["Login"] = "Failed";
         return View();
     }
 
+    [HttpPost]
     public async Task<IActionResult> Logout()
     {
         await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         return RedirectToAction("Index", "Home");
-    }
-
-    public async Task<IActionResult> AccessDenied()
-    {
-        return View();
     }
 
     private bool IsValidUser(string username, string password)

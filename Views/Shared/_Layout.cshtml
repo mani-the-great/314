@@ -45,5 +45,15 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    @if (!Context.Request.Path.Value.Equals("/", StringComparison.OrdinalIgnoreCase))
+    {
+        <div style="position: fixed; bottom: 20px; left: 20px; z-index: 1000;">
+            <a href="javascript:history.back()"
+               class="btn btn-secondary"
+               style="padding: 8px 16px; border-radius: 5px; color: white !important;">
+                <i class="fas fa-arrow-left" style="color: white;"></i> بازگشت
+            </a>
+        </div>
+    }
 </body>
 </html>
