@@ -20,7 +20,7 @@ namespace GolestanSystem.Controllers
                     .ThenInclude(cp => cp.Professor)
                 .ToListAsync();
             ViewData["profID"] = HttpContext.Session.GetString("profID");
-            
+
             return View(classes);
         }
         public async Task<IActionResult> ManageClassStudents(int id)

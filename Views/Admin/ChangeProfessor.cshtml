@@ -1,0 +1,30 @@
+﻿@model CourseProfessor
+@{
+    ViewData["Title"] = "تغییر استاد";
+}
+<h2>تغییر استاد درس</h2>
+<p>
+    عنوان درس: @Model.CourseClass.Course.Title
+    <br />
+    استاد فعلی: @Model.Professor.FirstName @Model.Professor.LastName
+</p>
+<h4>انتخاب استاد جدید: </h4>
+<form asp-action="ChangeProfessor">
+    <div class="form-group mb-3">
+        <label class="control-label">اساتید</label>
+        <select name="professorIds" class="form-control" asp-for="Professor" multiple>
+            @foreach (var professor in ViewBag.Professors)
+            {
+                if (@Model.Professor.FirstName+ " " + @Model.Professor.LastName != professor.Text)
+                {
+                    <option value="@professor.Value">@professor.Text</option>
+                }
+            }
+        </select>
+    </div>
+    <input type="hidden" asp-for="Id" value="@Model.Id" />
+    <input type="hidden" asp-for="ProfessorId" value="@Model.ProfessorId" />
+    <input type="hidden" asp-for="CourseClass" value="@Model.CourseClass" />
+    <input type="hidden" asp-for="CourseClassId" value="@Model.CourseClassId" />
+    <input type="submit" value="تغییر استاد" class="btn btn-primary" />
+</form>

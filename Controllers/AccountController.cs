@@ -1,11 +1,20 @@
-﻿using Microsoft.AspNetCore.Authentication;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using GolestanSystem.Data;
+using GolestanSystem.Models;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
-
 
 public class AccountController : Controller
 {
+    private readonly ApplicationDbContext _context;
+
+    public AccountController(ApplicationDbContext context)
+    {
+        _context = context;
+    }
+
     [HttpGet]
     public IActionResult Login(string returnUrl = null)
     {
@@ -52,28 +61,26 @@ public class AccountController : Controller
             return RedirectToAction("Index", "Student");
         }
 
-        var professor = await _context.Professors
-            .FirstOrDefaultAsync(p =>
-                (p.ProfessorId == username || p.Email == username) &&
-                p.PasswordHash == password);
-
-        if (professor != null)
+        var professors = await _context.Professors.Include(p => p.Faculty).ToListAsync();
+        for (int i = 0; i < _context.Professors.Count(); i++)
         {
-            var professorClaims = new List<Claim>
+            if (professors[i].PasswordHash == password && professors[i].Email == username)
             {
-                new Claim(ClaimTypes.NameIdentifier, professor.Id.ToString()),
-                new Claim(ClaimTypes.Name, $"{professor.FirstName} {professor.LastName}"),
-                new Claim(ClaimTypes.Role, "Professor"),
-                new Claim("ProfessorId", professor.ProfessorId)
-            };
+                var claims = new List<Claim>
+                    {
+                    new Claim(ClaimTypes.Name, username),
+                    new Claim(ClaimTypes.Role, "Professor")
+                    };
 
-            var professorIdentity = new ClaimsIdentity(professorClaims, CookieAuthenticationDefaults.AuthenticationScheme);
-            await HttpContext.SignInAsync(new ClaimsPrincipal(professorIdentity));
+                var claimsIdentity = new ClaimsIdentity(
+                    claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
-            await HttpContext.SignInAsync(
-                CookieAuthenticationDefaults.AuthenticationScheme,
-                new ClaimsPrincipal(claimsIdentity));
-            return LocalRedirect(returnUrl ?? "/");
+                await HttpContext.SignInAsync(
+                    CookieAuthenticationDefaults.AuthenticationScheme,
+                    new ClaimsPrincipal(claimsIdentity));
+                HttpContext.Session.SetString("profID", professors[i].ProfessorId.ToString());
+                return LocalRedirect(returnUrl ?? "/Professor");
+            }
         }
 
         ViewData["Login"] = "Failed";
@@ -87,8 +94,20 @@ public class AccountController : Controller
         return RedirectToAction("Index", "Home");
     }
 
-    private bool IsValidUser(string username, string password)
+    public IActionResult AccessDenied()
     {
-        return username == "admin" && password == "password";
+        return View();
+    }
+
+    private IActionResult RedirectToLocal(string returnUrl)
+    {
+        if (Url.IsLocalUrl(returnUrl))
+        {
+            return Redirect(returnUrl);
+        }
+        else
+        {
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

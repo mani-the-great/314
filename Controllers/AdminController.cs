@@ -343,6 +343,45 @@ namespace GolestanSystem.Controllers
             return View(model);
         }
 
+        public async Task<IActionResult> ChangeProfessor(int id)
+        {
+            var courseProfessor = await _context.CourseProfessors
+                .Include(cc => cc.CourseClass.Course)
+                .Include(cc => cc.Professor)
+                .FirstOrDefaultAsync(cc => cc.CourseClass.Id == id);
+            ViewBag.Professors = _context.Professors
+                .Select(p => new SelectListItem
+                {
+                    Value = p.Id.ToString(),
+                    Text = $"{p.FirstName} {p.LastName}"
+                })
+                .ToList();
+            return View(courseProfessor);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangeProfessor(CourseProfessor model, int[] professorIds)
+        {
+            if (professorIds != null && professorIds.Length > 0)
+            {
+                foreach (var profId in professorIds)
+                {
+                    var courseprofessor = await _context.CourseProfessors.FindAsync(model.ProfessorId, model.CourseClassId);
+                    _context.CourseProfessors.Remove(courseprofessor);
+                    _context.CourseProfessors.Add(new CourseProfessor
+                    {
+                        ProfessorId = profId,
+                        CourseClassId = model.CourseClassId
+                    });
+                    ViewBag.ProfId = profId;
+                    ViewBag.courseclassid = model.CourseClassId;
+                }
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToAction(nameof(ChangeProfessor));
+        }
+
         public async Task<IActionResult> ManageClassStudents(int id)
         {
             var courseClass = await _context.CourseClasses
