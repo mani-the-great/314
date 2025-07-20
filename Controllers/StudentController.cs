@@ -74,7 +74,7 @@ namespace GolestanSystem.Controllers
                 .ToListAsync();
 
             var passedCourses = grades.Where(g => g.IsPassed).ToList();
-            ViewBag.GPA = passedCourses.Any() ? passedCourses.Average(g => (double)g.Grade) : (double?)null;
+            ViewBag.OverallGPA = grades.Any() ? grades.Average(g => (double)g.Grade) : (double?)null;
             ViewBag.PassedCoursesCount = passedCourses.Count;
 
             return View(grades);

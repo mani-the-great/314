@@ -230,24 +230,50 @@ namespace GolestanSystem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteCourse(int id)
         {
-            var course = await _context.Courses.FindAsync(id);
-            if (course == null)
+            try
             {
-                return NotFound();
-            }
+                var course = await _context.Courses
+                    .Include(c => c.Classes)
+                    .FirstOrDefaultAsync(c => c.Id == id);
 
-            var hasClasses = await _context.CourseClasses
-                .AnyAsync(cc => cc.CourseId == id);
+                if (course == null)
+                {
+                    return NotFound();
+                }
 
-            if (hasClasses)
-            {
-                TempData["ErrorMessage"] = "این درس دارای کلاس است و قابل حذف نیست";
+                if (course.Classes.Any())
+                {
+                    TempData["ErrorMessage"] = "این درس دارای کلاس است و قابل حذف نیست";
+                    return RedirectToAction(nameof(Courses));
+                }
+
+                var prerequisites = await _context.Prerequisites
+                    .Where(p => p.CourseId == id)
+                    .ToListAsync();
+                _context.Prerequisites.RemoveRange(prerequisites);
+
+                var isPrerequisiteFor = await _context.Prerequisites
+                    .Where(p => p.PrerequisiteCourseId == id)
+                    .ToListAsync();
+                _context.Prerequisites.RemoveRange(isPrerequisiteFor);
+
+                _context.Courses.Remove(course);
+
+                await _context.SaveChangesAsync();
+
+                TempData["SuccessMessage"] = "درس با موفقیت حذف شد";
                 return RedirectToAction(nameof(Courses));
             }
-
-            _context.Courses.Remove(course);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Courses));
+            catch (DbUpdateException ex)
+            {
+                TempData["ErrorMessage"] = "امکان حذف این درس وجود ندارد. ابتدا وابستگی‌های آن را بررسی کنید.";
+                return RedirectToAction(nameof(Courses));
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "خطایی در حذف درس رخ داد";
+                return RedirectToAction(nameof(Courses));
+            }
         }
         #endregion
 
@@ -494,13 +520,22 @@ namespace GolestanSystem.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteClass(int id)
         {
+            var classProfessors = await _context.CourseProfessors
+                .Where(cp => cp.CourseClassId == id)
+                .ToListAsync();
+            _context.CourseProfessors.RemoveRange(classProfessors);
+
+            var classStudents = await _context.CourseStudents
+                .Where(cs => cs.CourseClassId == id)
+                .ToListAsync();
+            _context.CourseStudents.RemoveRange(classStudents);
+
             var courseClass = await _context.CourseClasses.FindAsync(id);
-            if (courseClass == null)
+            if (courseClass != null)
             {
-                return NotFound();
+                _context.CourseClasses.Remove(courseClass);
             }
 
-            _context.CourseClasses.Remove(courseClass);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(CourseClasses));
         }

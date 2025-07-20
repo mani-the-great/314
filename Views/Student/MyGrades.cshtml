@@ -1,6 +1,10 @@
 ﻿@using GolestanSystem.Models.ViewModels
 @model IEnumerable<StudentGradeViewModel>
 
+@{
+    ViewData["Title"] = "نمرات من";
+}
+
 <h2>نمرات من</h2>
 
 <table class="table">
@@ -29,5 +33,5 @@
 
 <div class="alert alert-info">
     <p>تعداد دروس پاس شده: @ViewBag.PassedCoursesCount</p>
-    <p>معدل: @(ViewBag.GPA?.ToString("0.00") ?? "محاسبه نشده")</p>
+    <p>معدل: @(ViewBag.OverallGPA?.ToString("0.00") ?? "محاسبه نشده")</p>
 </div>

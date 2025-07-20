@@ -17,133 +17,133 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GolestanSystem
 build_property.RootNamespace = GolestanSystem
-build_property.ProjectDir = C:\Users\manis\Desktop\JadidAPP\314\
+build_property.ProjectDir = C:\Users\Alireza\314\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\manis\Desktop\JadidAPP\314
+build_property.MSBuildProjectDirectory = C:\Users\Alireza\314
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Account/AccessDenied.cshtml]
+[C:/Users/Alireza/314/Views/Account/AccessDenied.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Account/Login.cshtml]
+[C:/Users/Alireza/314/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Account/Logout.cshtml]
+[C:/Users/Alireza/314/Views/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/AddClass.cshtml]
+[C:/Users/Alireza/314/Views/Admin/AddClass.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkQ2xhc3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/AddCourse.cshtml]
+[C:/Users/Alireza/314/Views/Admin/AddCourse.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkQ291cnNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/AddFaculty.cshtml]
+[C:/Users/Alireza/314/Views/Admin/AddFaculty.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkRmFjdWx0eS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/AddProfessor.cshtml]
+[C:/Users/Alireza/314/Views/Admin/AddProfessor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkUHJvZmVzc29yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/AddStudent.cshtml]
+[C:/Users/Alireza/314/Views/Admin/AddStudent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkU3R1ZGVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/ChangeProfessor.cshtml]
+[C:/Users/Alireza/314/Views/Admin/ChangeProfessor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2hhbmdlUHJvZmVzc29yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/CourseClasses.cshtml]
+[C:/Users/Alireza/314/Views/Admin/CourseClasses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ291cnNlQ2xhc3Nlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/Courses.cshtml]
+[C:/Users/Alireza/314/Views/Admin/Courses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ291cnNlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/Faculties.cshtml]
+[C:/Users/Alireza/314/Views/Admin/Faculties.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRmFjdWx0aWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/Index.cshtml]
+[C:/Users/Alireza/314/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/ManageClassStudents.cshtml]
+[C:/Users/Alireza/314/Views/Admin/ManageClassStudents.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlQ2xhc3NTdHVkZW50cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/Professors.cshtml]
+[C:/Users/Alireza/314/Views/Admin/Professors.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZmVzc29ycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Admin/Students.cshtml]
+[C:/Users/Alireza/314/Views/Admin/Students.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU3R1ZGVudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Home/Index.cshtml]
+[C:/Users/Alireza/314/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Home/Privacy.cshtml]
+[C:/Users/Alireza/314/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Professor/Index.cshtml]
+[C:/Users/Alireza/314/Views/Professor/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzc29yXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Professor/ManageClassStudents.cshtml]
+[C:/Users/Alireza/314/Views/Professor/ManageClassStudents.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzc29yXE1hbmFnZUNsYXNzU3R1ZGVudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Professor/SubmitStudentScore.cshtml]
+[C:/Users/Alireza/314/Views/Professor/SubmitStudentScore.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzc29yXFN1Ym1pdFN0dWRlbnRTY29yZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Shared/Error.cshtml]
+[C:/Users/Alireza/314/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Alireza/314/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Student/Index.cshtml]
+[C:/Users/Alireza/314/Views/Student/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Student/MyCourses.cshtml]
+[C:/Users/Alireza/314/Views/Student/MyCourses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxNeUNvdXJzZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Student/MyGrades.cshtml]
+[C:/Users/Alireza/314/Views/Student/MyGrades.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxNeUdyYWRlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Student/MyInfo.cshtml]
+[C:/Users/Alireza/314/Views/Student/MyInfo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxNeUluZm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/_ViewImports.cshtml]
+[C:/Users/Alireza/314/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/_ViewStart.cshtml]
+[C:/Users/Alireza/314/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/manis/Desktop/JadidAPP/314/Views/Shared/_Layout.cshtml]
+[C:/Users/Alireza/314/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-igwmxww2os
